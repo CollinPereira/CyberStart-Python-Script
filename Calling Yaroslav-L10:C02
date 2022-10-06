@@ -1,0 +1,6 @@
+code = 4096
+x=0
+while x <= 5520:
+    code = code + x
+    x += 1
+    print(code)
