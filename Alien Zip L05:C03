@@ -1,0 +1,15 @@
+import zipfile
+
+filename = 'alien-zip-2092'
+FileZiped = zipfile.ZipFile('/tmp/alien-zip-2092.zip', "r")
+
+for x in range(1, 1000):
+  x = str(x)
+  y = x.zfill(3)
+  print('trying ' + str(y))
+  try:
+      FileZiped.extractall("/tmp", pwd = bytes(y, 'utf-8'))
+      print('Password found: ' + y)
+      break
+  except:
+      pass
